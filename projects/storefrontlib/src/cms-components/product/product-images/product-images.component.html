@@ -1,7 +1,17 @@
 <ng-container *ngIf="mainImage$ | async as main">
-  <cx-media [container]="main" format="zoom"> </cx-media>
+  <lib-ngx-image-zoom
+    [thumbImage]="myThumbnail"
+    [fullImage]="myFullresImage"
+    [magnification]="1"
+    [enableScrollZoom]="true"
+    [enableLens]="true"
+    [lensWidth]="200"
+  ></lib-ngx-image-zoom>
+  <!--   <lib-ngx-image-zoom [thumbImage]="main.image.zoom.url" ></lib-ngx-image-zoom> -->
 </ng-container>
-
+<!-- <ng-container *ngIf="detailImage">
+  <p [innerHTML]="detailImage"></p>
+</ng-container> -->
 <ng-container *ngIf="thumbs$ | async as thumbs">
   <cx-carousel
     *ngIf="thumbs.length"

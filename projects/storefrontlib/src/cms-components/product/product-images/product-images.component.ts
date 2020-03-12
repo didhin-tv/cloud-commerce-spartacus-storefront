@@ -10,6 +10,10 @@ import { CurrentProductService } from '../current-product.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductImagesComponent {
+  myThumbnail = 'https://wittlock.github.io/ngx-image-zoom/assets/thumb.jpg';
+  myFullresImage =
+    'https://wittlock.github.io/ngx-image-zoom/assets/fullres.jpg';
+  detailImage: any;
   private mainMediaContainer = new BehaviorSubject(null);
 
   private product$: Observable<

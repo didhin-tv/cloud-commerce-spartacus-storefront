@@ -6,7 +6,7 @@ import { OutletModule } from '../../../cms-structure/outlet/index';
 import { CarouselModule } from '../../../shared/components/carousel/index';
 import { MediaModule } from '../../../shared/components/media/media.module';
 import { ProductImagesComponent } from './product-images.component';
-
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +21,7 @@ import { ProductImagesComponent } from './product-images.component';
       },
     }),
     CarouselModule,
+    NgxImageZoomModule,
   ],
   declarations: [ProductImagesComponent],
   entryComponents: [ProductImagesComponent],
