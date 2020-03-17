@@ -1,7 +1,9 @@
 <ng-container *ngIf="mainImage$ | async as main">
-  <pinch-zoom [backgroundColor]="white" overflow="visible">
-    <img [src]="main.zoom.url" />
-  </pinch-zoom>
+  <div>
+    <pinch-zoom [backgroundColor]="white">
+      <img [src]="main.zoom.url" />
+    </pinch-zoom>
+  </div>
 </ng-container>
 
 <ng-container *ngIf="thumbs$ | async as thumbs">
