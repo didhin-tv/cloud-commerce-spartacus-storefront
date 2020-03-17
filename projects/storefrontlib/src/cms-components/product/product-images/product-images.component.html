@@ -1,27 +1,16 @@
 <ng-container *ngIf="mainImage$ | async as main">
-  <pinch-zoom [backgroundColor]="white">
+  <pinch-zoom [backgroundColor]="white" overflow="visible">
     <img [src]="main.zoom.url" />
   </pinch-zoom>
 </ng-container>
 
 <ng-container *ngIf="thumbs$ | async as thumbs">
-  <cx-carousel
-    *ngIf="thumbs.length"
-    class="thumbs"
-    [items]="thumbs"
-    itemWidth="120px"
-    [hideIndicators]="false"
-    [template]="thumb"
-  ></cx-carousel>
+  <cx-carousel *ngIf="thumbs.length" class="thumbs" [items]="thumbs" itemWidth="120px" [hideIndicators]="false"
+    [template]="thumb"></cx-carousel>
 </ng-container>
 
 <ng-template #thumb let-item="item">
-  <cx-media
-    [container]="item.container"
-    tabindex="0"
-    format="thumbnail"
-    (focus)="openImage(item.container)"
-    [class.is-active]="isActive(item.container) | async"
-  >
+  <cx-media [container]="item.container" tabindex="0" format="thumbnail" (focus)="openImage(item.container)"
+    [class.is-active]="isActive(item.container) | async">
   </cx-media>
 </ng-template>
